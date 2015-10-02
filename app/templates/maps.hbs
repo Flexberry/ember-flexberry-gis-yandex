@@ -1,7 +1,9 @@
-<div class="four wide column">
+<div class="one wide column">
   <div class="ui list">
     {{#each model as |map|}}
-      {{link-to map.name "map" map class="item"}}
+      {{#link-to "maps.map" map class="item"}}
+        {{map.name}}
+      {{/link-to}}
     {{/each}}
   </div>
 </div>

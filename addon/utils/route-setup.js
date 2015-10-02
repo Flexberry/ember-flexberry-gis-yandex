@@ -1,6 +1,6 @@
-export default function(self) {
-   self.route('layers', { path: '/' });
-   self.route('maps', function() {
-     self.route('map', { path: 'maps/:id' });
+export default function(router) {
+   router.route('layers', { path: '/' });
+   router.route('maps', function() {
+     this.route('map', { path: '/:id' });
    });
 }
