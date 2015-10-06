@@ -15,7 +15,7 @@ export default Ember.Component.extend({
     this.set('lastZIndex', 0);
     this.addLayers();
     this.changeLayersVisibility();
-  }.on('didInsertElement'),
+  }.on('didInsertElement').observes('map'),
 
   addLayers: function(){
     let leafletLayers = this.get('layers');
@@ -69,6 +69,5 @@ export default Ember.Component.extend({
       leafletMap.remove();
       this.set('leafletMap', null);
     }
-
   }.on('willDestroyElement')
 });
