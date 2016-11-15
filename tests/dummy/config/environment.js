@@ -1,6 +1,8 @@
 /* jshint node: true */
 
 module.exports = function (environment) {
+  var backendUrl = 'https://flexberry-ember-gis.azurewebsites.net/';
+
   var ENV = {
     modulePrefix: 'dummy',
     environment: environment,
@@ -14,9 +16,14 @@ module.exports = function (environment) {
     },
 
     APP: {
+      // Here you can pass flags/options to your application instance
+      // when it is created
+      backendUrl: backendUrl,
+
+      // It's a custom property, used to prevent duplicate backend urls in sources.
       backendUrls: {
-        root: null,
-        api: null
+        root: backendUrl,
+        api: backendUrl + '/odata'
       },
 
       // Log service settings.
@@ -42,6 +49,22 @@ module.exports = function (environment) {
   ENV.moment = {
     outputFormat: 'L'
   };
+
+  if (environment === 'development') {
+    backendUrl = 'http://localhost:63138';
+
+    ENV.APP.backendUrl = backendUrl;
+    ENV.APP.backendUrls = {
+      root: backendUrl,
+      api: backendUrl + '/odata'
+    };
+
+    // ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    // ENV.APP.LOG_TRANSITIONS = true;
+    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+  }
 
   if (environment === 'test') {
     // Testem prefers this...

@@ -9,7 +9,7 @@
     "blueimp-file-upload": "9.11.2",
     "jquery-file-download": "1.4.4",
     "devicejs": "0.2.7",
-    "semantic-ui": "^2.2.4",
+    "semantic-ui": "^2.2.6",
     "leaflet": "1.0.1",
     "leaflet.editable": "Leaflet/Leaflet.Editable#master",
     "leaflet.editable.measures": "Flexberry/Leaflet.Editable.Measures#gh-pages",
