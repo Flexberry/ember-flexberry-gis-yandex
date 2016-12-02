@@ -1,10 +1,8 @@
 /* jshint node: true */
 
 module.exports = function (environment) {
-  var backendUrl = 'https://flexberry-ember-gis.azurewebsites.net/';
-
   var ENV = {
-    modulePrefix: 'dummy',
+    modulePrefix: 'ember-flexberry-gis',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -16,16 +14,6 @@ module.exports = function (environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-      backendUrl: backendUrl,
-
-      // It's a custom property, used to prevent duplicate backend urls in sources.
-      backendUrls: {
-        root: backendUrl,
-        api: backendUrl + '/odata'
-      },
-
       // Log service settings.
       log: {
         // Flag: indicates whether log service is enabled or not.
@@ -50,22 +38,6 @@ module.exports = function (environment) {
     outputFormat: 'L'
   };
 
-  if (environment === 'development') {
-    backendUrl = 'http://localhost:63138';
-
-    ENV.APP.backendUrl = backendUrl;
-    ENV.APP.backendUrls = {
-      root: backendUrl,
-      api: backendUrl + '/odata'
-    };
-
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  }
-
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
@@ -78,19 +50,23 @@ module.exports = function (environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-    // Configure production version settings here.
-  }
+  // Change paths application assets if build was started with following parameters:
+  // ember build --gh-pages --brunch=<brunch-to-publish-on-gh-pages>.
+  if (process.argv.indexOf('--gh-pages') >= 0) {
+    var brunch;
 
-  // Read more about CSP:
-  // http://www.ember-cli.com/#content-security-policy
-  // https://github.com/rwjblue/ember-cli-content-security-policy
-  // http://content-security-policy.com
-  ENV.contentSecurityPolicy = {
-    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
-    'font-src': "'self' data: https://fonts.gstatic.com",
-    'connect-src': "'self' " + ENV.APP.backendUrls.root
-  };
+    // Retrieve brunch name from process arguments.
+    process.argv.forEach(function(value, index) {
+      if (value.indexOf('--brunch=') >=0) {
+        brunch=value.split('=')[1];
+        return;
+      }
+    });
+
+    // Change base URL to force relative paths to application assets.
+    ENV.baseURL = '/' + ENV.modulePrefix + '/' + brunch + '/';
+    ENV.locationType = 'none';
+  }
 
   return ENV;
 };
