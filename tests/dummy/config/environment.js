@@ -2,7 +2,8 @@
 
 module.exports = function (environment) {
   var ENV = {
-    modulePrefix: 'ember-flexberry-gis',
+    repositoryName: 'ember-flexberry-gis-yandex',
+    modulePrefix: 'dummy',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -14,6 +15,11 @@ module.exports = function (environment) {
     },
 
     APP: {
+      backendUrls: {
+        root: 'https://flexberry.github.io/ember-flexberry-gis-yandex',
+        api: 'https://flexberry.github.io/ember-flexberry-gis-yandex'
+      },
+
       // Log service settings.
       log: {
         // Flag: indicates whether log service is enabled or not.
@@ -64,7 +70,7 @@ module.exports = function (environment) {
     });
 
     // Change base URL to force relative paths to application assets.
-    ENV.baseURL = '/' + ENV.modulePrefix + '/' + brunch + '/';
+    ENV.baseURL = '/' + ENV.repositoryName + '/' + brunch + '/';
     ENV.locationType = 'none';
   }
 
