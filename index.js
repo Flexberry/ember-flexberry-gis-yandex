@@ -7,8 +7,7 @@ module.exports = {
   included: function(app) {
   	this._super.included.apply(this._super, arguments);
 
-    // Leaflet-Yandex.
-    app.import('vendor/yandex/yandex.maps.api.js');
+    // Yandex maps plugin for leaflet.
     app.import(app.bowerDirectory + '/leaflet-plugins/layer/tile/Yandex.js');
   }
 };

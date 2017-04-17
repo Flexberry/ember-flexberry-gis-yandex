@@ -39,7 +39,9 @@ export default BaseLayer.extend({
   createSettings() {
     let settings = this._super(...arguments);
     Ember.$.extend(true, settings, {
-      type: 'map'
+      type: 'map',
+      jsApiUrl: 'https://api-maps.yandex.ru/2.1/',
+      detectLanguageAutomatically: true
     });
 
     return settings;

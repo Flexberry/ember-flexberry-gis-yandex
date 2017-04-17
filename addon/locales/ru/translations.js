@@ -5,6 +5,12 @@ export default {
         'tile-yandex': {
           'map-type-dropdown': {
             'caption': 'Тип карты'
+          },
+          'js-api-url-textbox': {
+            'caption': 'URL для загрузки JS API Яндекс карт'
+          },
+          'detect-language-automatically-checkbox': {
+            'caption': 'Определять язык автоматически'
           }
         },
 

@@ -5,6 +5,12 @@ export default {
         'tile-yandex': {
           'map-type-dropdown': {
             'caption': 'Map type'
+          },
+          'js-api-url-textbox': {
+            'caption': 'Yandex maps JS API download URL'
+          },
+          'detect-language-automatically-checkbox': {
+            'caption': 'Detect language automatically'
           }
         },
 
