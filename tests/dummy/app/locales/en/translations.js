@@ -62,7 +62,7 @@ Ember.$.extend(true, translations, {
         'gis': {
           'caption': 'GIS',
           'title': '',
-          'maps': {
+          'map': {
             'caption': 'Map',
             'title': ''
           }
