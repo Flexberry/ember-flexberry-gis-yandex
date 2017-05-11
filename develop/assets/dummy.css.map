@@ -1,0 +1,13 @@
+{
+	"version": 3,
+	"sourceRoot": "/home/travis/build/Flexberry/ember-flexberry-gis-yandex/app/styles",
+	"file": "dummy.css",
+	"sources": [
+		"../../sass_compiler-input_base_path-wHS4jG27.tmp/app/styles/app.scss"
+	],
+	"sourcesContent": [
+		".margin {\n  margin-left: 10px;\n}\n\n.spinner {\n  background: url('/assets/images/cat.gif') no-repeat;\n  background-size: contain;\n  height: 140px;\n  width: 175px;\n  margin: 0 auto;\n}\n\n.loading-message {\n  text-align: center;\n  color: #aaa;\n}\n\n"
+	],
+	"mappings": "AAAA,AAAA,OAAO,CAAC;EACN,WAAW,EAAE,IAAK,GACnB;;AAED,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,6BAAG,CAA2B,SAAS;EACnD,eAAe,EAAE,OAAQ;EACzB,MAAM,EAAE,KAAM;EACd,KAAK,EAAE,KAAM;EACb,MAAM,EAAE,MAAO,GAChB;;AAED,AAAA,gBAAgB,CAAC;EACf,UAAU,EAAE,MAAO;EACnB,KAAK,EAAE,IAAK,GACb",
+	"names": []
+}
