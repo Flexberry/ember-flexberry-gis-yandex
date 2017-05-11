@@ -3,10 +3,13 @@
 # Exit with nonzero exit code if anything fails.
 set -e
 
+# Define repository relative GitHub address.
+repositoryRelativeGitHubAddress="Flexberry/ember-flexberry-gis-yandex"
+
 # Clone project into 'repository' subfolder && move to it.
 echo "Prepare for deploy to gh-pages."
-echo "Clone ember-flexberry-gis-yandex repository & checkout latest version of gh-pages branch."
-git clone --recursive https://github.com/Flexberry/ember-flexberry-gis-yandex.git repository
+echo "Clone ${repositoryRelativeGitHubAddress} repository & checkout latest version of gh-pages branch."
+git clone --recursive "https://github.com/${repositoryRelativeGitHubAddress}.git" repository
 cd repository
 
 # Checkout gh-pages brunch & pull it's latest version.
@@ -31,6 +34,6 @@ git add --all
 git commit -m "Update gh-pages for ${TRAVIS_BRANCH} branch"
 
 # Redirect any output to /dev/null to hide any sensitive credential data that might otherwise be exposed.
-git push --force --quiet "https://${GH_TOKEN}@github.com/Flexberry/ember-flexberry-gis-yandex.git" > /dev/null 2>&1
+git push --force --quiet "https://${GH_TOKEN}@github.com/${repositoryRelativeGitHubAddress}.git" > /dev/null 2>&1
 
 echo "Deploy to gh-pages finished."
