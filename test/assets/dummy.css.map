@@ -1,13 +1,13 @@
 {
 	"version": 3,
-	"sourceRoot": "/home/travis/build/Flexberry/ember-flexberry-gis/app/styles",
+	"sourceRoot": "/home/travis/build/Flexberry/ember-flexberry-gis-yandex/app/styles",
 	"file": "dummy.css",
 	"sources": [
-		"../../sass_compiler-input_base_path-PifesdfU.tmp/app/styles/app.scss"
+		"../../sass_compiler-input_base_path-D6dubyd2.tmp/app/styles/app.scss"
 	],
 	"sourcesContent": [
-		".margin {\n  margin-left: 10px;\n}\n\n.spinner {\n  background: url('images/cat.gif') no-repeat;\n  background-size: contain;\n  height: 140px;\n  width: 175px;\n  margin: 0 auto;\n}\n\n.loading-message {\n  text-align: center;\n  color: #aaa;\n}\n\n.ui.sidebar.search, .ui.sidebar.bookmarks {\n  background-color: white;\n}\n"
+		".margin {\n  margin-left: 10px;\n}\n\n.spinner {\n  background: url('/assets/images/cat.gif') no-repeat;\n  background-size: contain;\n  height: 140px;\n  width: 175px;\n  margin: 0 auto;\n}\n\n.loading-message {\n  text-align: center;\n  color: #aaa;\n}\n\n"
 	],
-	"mappings": "AAAA,AAAA,OAAO,CAAC;EACN,WAAW,EAAE,IAAK,GACnB;;AAED,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,qBAAG,CAAmB,SAAS;EAC3C,eAAe,EAAE,OAAQ;EACzB,MAAM,EAAE,KAAM;EACd,KAAK,EAAE,KAAM;EACb,MAAM,EAAE,MAAO,GAChB;;AAED,AAAA,gBAAgB,CAAC;EACf,UAAU,EAAE,MAAO;EACnB,KAAK,EAAE,IAAK,GACb;;AAED,AAAW,GAAR,AAAA,QAAQ,AAAA,OAAO,EAAE,AAAW,GAAR,AAAA,QAAQ,AAAA,UAAU,CAAC;EACxC,gBAAgB,EAAE,KAAM,GACzB",
+	"mappings": "AAAA,AAAA,OAAO,CAAC;EACN,WAAW,EAAE,IAAK,GACnB;;AAED,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,6BAAG,CAA2B,SAAS;EACnD,eAAe,EAAE,OAAQ;EACzB,MAAM,EAAE,KAAM;EACd,KAAK,EAAE,KAAM;EACb,MAAM,EAAE,MAAO,GAChB;;AAED,AAAA,gBAAgB,CAAC;EACf,UAAU,EAAE,MAAO;EACnB,KAAK,EAAE,IAAK,GACb",
 	"names": []
 }

@@ -622,6 +622,382 @@
 	border-right-color: #fff;
 	}
 
+/*!
+ * Stylesheet for the Date Range Picker, for use with Semantic UI
+ *
+ * Copyright 2013-2015 Dan Grossman ( http://www.dangrossman.info )
+ * Licensed under the MIT license. See http://www.opensource.org/licenses/mit-license.php
+ *
+ * Built for http://www.improvely.com
+ */
+
+.daterangepicker.dropdown-menu {
+    max-width: none;
+    display: none;
+    z-index: 3000;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.daterangepicker.opensleft .ranges, .daterangepicker.opensleft .calendar {
+    float: left;
+    margin: 4px;
+}
+
+.daterangepicker.opensright .ranges, .daterangepicker.opensright .calendar,
+.daterangepicker.openscenter .ranges, .daterangepicker.openscenter .calendar {
+    float: right;
+    margin: 4px;
+}
+
+.daterangepicker.single .ranges, .daterangepicker.single .calendar {
+    float: none;
+}
+
+.daterangepicker .ranges {
+    width: 160px;
+    text-align: left;
+}
+
+.daterangepicker .ranges .range_inputs>div {
+    float: left;
+}
+
+.daterangepicker .ranges .range_inputs>div:nth-child(2) {
+    padding-left: 11px;
+}
+
+.daterangepicker .calendar {
+    display: none;
+    max-width: 270px;
+}
+
+.daterangepicker.show-calendar .calendar {
+    display: block;
+}
+
+.daterangepicker .calendar.single .calendar-date {
+    border: none;
+}
+
+.daterangepicker .calendar th, .daterangepicker .calendar td {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 32px;
+}
+
+.daterangepicker .daterangepicker_start_input label,
+.daterangepicker .daterangepicker_end_input label {
+    color: #333;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 2px;
+    text-shadow: #fff 1px 1px 0px;
+    text-transform: uppercase;
+    width: 74px;
+}
+
+.daterangepicker .ranges input {
+    font-size: 11px;
+}
+
+.daterangepicker .ranges .input-mini {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    display: block;
+    font-size: 11px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin: 0 0 10px 0;
+    padding: 0 6px;
+    width: 74px;
+}
+
+.daterangepicker .ranges ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.daterangepicker .ranges li {
+    font-size: 13px;
+    background: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    color: #08c;
+    padding: 3px 12px;
+    margin-bottom: 8px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.daterangepicker .ranges li.active, .daterangepicker .ranges li:hover {
+    background: #08c;
+    border: 1px solid #08c;
+    color: #fff;
+}
+
+.daterangepicker .calendar-date {
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.daterangepicker .calendar-time {
+    text-align: center;
+    margin: 8px auto 0 auto;
+    line-height: 30px;
+}
+
+.daterangepicker {
+    position: absolute;
+    background: #fff;
+    top: 100px;
+    left: 20px;
+    padding: 4px;
+    margin-top: 1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.daterangepicker.opensleft:before {
+    position: absolute;
+    top: -7px;
+    right: 9px;
+    display: inline-block;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-left: 7px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+}
+
+.daterangepicker.opensleft:after {
+    position: absolute;
+    top: -6px;
+    right: 10px;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    content: '';
+}
+
+.daterangepicker.openscenter:before {
+    position: absolute;
+    top: -7px;
+    left: 0;
+    right: 0;
+    width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-left: 7px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+}
+
+.daterangepicker.openscenter:after {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+    width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    content: '';
+}
+
+.daterangepicker.opensright:before {
+    position: absolute;
+    top: -7px;
+    left: 9px;
+    display: inline-block;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-left: 7px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+}
+
+.daterangepicker.opensright:after {
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    content: '';
+}
+
+.daterangepicker.dropup {
+    margin-top: -5px;
+}
+
+.daterangepicker.dropup:before {
+    top: initial;
+    bottom: -7px;
+    border-bottom: initial;
+    border-top: 7px solid #ccc;
+}
+
+.daterangepicker.dropup:after {
+    top: initial;
+    bottom: -6px;
+    border-bottom: initial;
+    border-top: 6px solid #fff;
+}
+
+.daterangepicker table {
+    width: 100%;
+    margin: 0;
+}
+
+.daterangepicker td, .daterangepicker th {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.daterangepicker td.off {
+    color: #999;
+}
+
+.daterangepicker td.disabled, .daterangepicker option.disabled {
+    color: #999;
+}
+
+.daterangepicker td.available:hover, .daterangepicker th.available:hover {
+    background: #eee;
+}
+
+.daterangepicker td.in-range {
+    background: #ebf4f8;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.daterangepicker td.start-date {
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.daterangepicker td.end-date {
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.daterangepicker td.start-date.end-date {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #357ebd;
+    border-color: #3071a9;
+    color: #fff;
+}
+
+.daterangepicker td.week, .daterangepicker th.week {
+    font-size: 80%;
+    color: #ccc;
+}
+
+.daterangepicker .ui.dropdown.monthselect,
+.daterangepicker .ui.dropdown.yearselect {
+    font-size: 12px;
+    padding: 5px;
+    margin: 0 5px 0 0;
+    height: auto;
+    cursor: default;
+}
+
+.daterangepicker select.monthselect {
+    margin-right: 2%;
+    width: auto;
+}
+
+.daterangepicker select.yearselect {
+    width: auto;
+}
+
+.daterangepicker select.ui.dropdown.hourselect,
+.daterangepicker select.ui.dropdown.minuteselect,
+.daterangepicker select.ui.dropdown.secondselect,
+.daterangepicker select.ui.dropdown.ampmselect {
+    padding: 3px;
+    height: 2em;
+}
+
+
+.daterangepicker .ui.dropdown.hourselect,
+.daterangepicker .ui.dropdown.minuteselect,
+.daterangepicker .ui.dropdown.secondselect,
+.daterangepicker .ui.dropdown.ampmselect {
+    padding: 5px;
+}
+
+.daterangepicker .ui.dropdown.yearselect > .text,
+.daterangepicker .ui.dropdown.monthselect > .text,
+.daterangepicker .ui.dropdown.hourselect > .text,
+.daterangepicker .ui.dropdown.minuteselect > .text,
+.daterangepicker .ui.dropdown.secondselect > .text,
+.daterangepicker .ui.dropdown.ampmselect > .text {
+    margin-right: 1.25em;
+}
+
+.daterangepicker .ui.dropdown.yearselect > .dropdown.icon,
+.daterangepicker .ui.dropdown.monthselect > .dropdown.icon,
+.daterangepicker .ui.dropdown.hourselect > .dropdown.icon,
+.daterangepicker .ui.dropdown.minuteselect > .dropdown.icon,
+.daterangepicker .ui.dropdown.secondselect > .dropdown.icon,
+.daterangepicker .ui.dropdown.ampmselect > .dropdown.icon {
+    padding: .8em .15em .8em .8em;
+}
+
+.daterangepicker_start_input {
+    float: left;
+}
+
+.daterangepicker_end_input {
+    float: left;
+    padding-left: 11px
+}
+
+.daterangepicker th.month {
+    width: auto;
+    padding: 0;
+}
+
+.daterangepicker .prev .left.arrow.icon,
+.daterangepicker .next .right.arrow.icon { margin: 0; }
+
 .history-control.leaflet-bar.hidden{display:none}.history-control.leaflet-bar.horizontal a{display:inline-block;border-bottom:0;border-radius:0;border-right:1px solid #ccc}.history-control.leaflet-bar.horizontal a:first-child{border-top-left-radius:4px;border-bottom-left-radius:4px}.history-control.leaflet-bar.horizontal a:last-child{border-top-right-radius:4px;border-bottom-right-radius:4px;border-right:0}.history-control.leaflet-bar a{width:auto;font-size:1.1em;min-width:26px}
 .leaflet-draw-tooltip {
   background: rgba(0, 0, 0, 0.5) !important;
@@ -1088,382 +1464,6 @@
 .leaflet-oldie .leaflet-control-zoomslider-out {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '-');
 }
-
-/*!
- * Stylesheet for the Date Range Picker, for use with Semantic UI
- *
- * Copyright 2013-2015 Dan Grossman ( http://www.dangrossman.info )
- * Licensed under the MIT license. See http://www.opensource.org/licenses/mit-license.php
- *
- * Built for http://www.improvely.com
- */
-
-.daterangepicker.dropdown-menu {
-    max-width: none;
-    display: none;
-    z-index: 3000;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 5px #ccc;
-}
-
-.daterangepicker.opensleft .ranges, .daterangepicker.opensleft .calendar {
-    float: left;
-    margin: 4px;
-}
-
-.daterangepicker.opensright .ranges, .daterangepicker.opensright .calendar,
-.daterangepicker.openscenter .ranges, .daterangepicker.openscenter .calendar {
-    float: right;
-    margin: 4px;
-}
-
-.daterangepicker.single .ranges, .daterangepicker.single .calendar {
-    float: none;
-}
-
-.daterangepicker .ranges {
-    width: 160px;
-    text-align: left;
-}
-
-.daterangepicker .ranges .range_inputs>div {
-    float: left;
-}
-
-.daterangepicker .ranges .range_inputs>div:nth-child(2) {
-    padding-left: 11px;
-}
-
-.daterangepicker .calendar {
-    display: none;
-    max-width: 270px;
-}
-
-.daterangepicker.show-calendar .calendar {
-    display: block;
-}
-
-.daterangepicker .calendar.single .calendar-date {
-    border: none;
-}
-
-.daterangepicker .calendar th, .daterangepicker .calendar td {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    white-space: nowrap;
-    text-align: center;
-    min-width: 32px;
-}
-
-.daterangepicker .daterangepicker_start_input label,
-.daterangepicker .daterangepicker_end_input label {
-    color: #333;
-    display: block;
-    font-size: 11px;
-    font-weight: normal;
-    height: 20px;
-    line-height: 20px;
-    margin-bottom: 2px;
-    text-shadow: #fff 1px 1px 0px;
-    text-transform: uppercase;
-    width: 74px;
-}
-
-.daterangepicker .ranges input {
-    font-size: 11px;
-}
-
-.daterangepicker .ranges .input-mini {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #555;
-    display: block;
-    font-size: 11px;
-    height: 30px;
-    line-height: 30px;
-    vertical-align: middle;
-    margin: 0 0 10px 0;
-    padding: 0 6px;
-    width: 74px;
-}
-
-.daterangepicker .ranges ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.daterangepicker .ranges li {
-    font-size: 13px;
-    background: #f5f5f5;
-    border: 1px solid #f5f5f5;
-    color: #08c;
-    padding: 3px 12px;
-    margin-bottom: 8px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.daterangepicker .ranges li.active, .daterangepicker .ranges li:hover {
-    background: #08c;
-    border: 1px solid #08c;
-    color: #fff;
-}
-
-.daterangepicker .calendar-date {
-    border: 1px solid #ddd;
-    padding: 4px;
-    border-radius: 4px;
-    background: #fff;
-}
-
-.daterangepicker .calendar-time {
-    text-align: center;
-    margin: 8px auto 0 auto;
-    line-height: 30px;
-}
-
-.daterangepicker {
-    position: absolute;
-    background: #fff;
-    top: 100px;
-    left: 20px;
-    padding: 4px;
-    margin-top: 1px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
-
-.daterangepicker.opensleft:before {
-    position: absolute;
-    top: -7px;
-    right: 9px;
-    display: inline-block;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #ccc;
-    border-left: 7px solid transparent;
-    border-bottom-color: rgba(0, 0, 0, 0.2);
-    content: '';
-}
-
-.daterangepicker.opensleft:after {
-    position: absolute;
-    top: -6px;
-    right: 10px;
-    display: inline-block;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #fff;
-    border-left: 6px solid transparent;
-    content: '';
-}
-
-.daterangepicker.openscenter:before {
-    position: absolute;
-    top: -7px;
-    left: 0;
-    right: 0;
-    width: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #ccc;
-    border-left: 7px solid transparent;
-    border-bottom-color: rgba(0, 0, 0, 0.2);
-    content: '';
-}
-
-.daterangepicker.openscenter:after {
-    position: absolute;
-    top: -6px;
-    left: 0;
-    right: 0;
-    width: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #fff;
-    border-left: 6px solid transparent;
-    content: '';
-}
-
-.daterangepicker.opensright:before {
-    position: absolute;
-    top: -7px;
-    left: 9px;
-    display: inline-block;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #ccc;
-    border-left: 7px solid transparent;
-    border-bottom-color: rgba(0, 0, 0, 0.2);
-    content: '';
-}
-
-.daterangepicker.opensright:after {
-    position: absolute;
-    top: -6px;
-    left: 10px;
-    display: inline-block;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #fff;
-    border-left: 6px solid transparent;
-    content: '';
-}
-
-.daterangepicker.dropup {
-    margin-top: -5px;
-}
-
-.daterangepicker.dropup:before {
-    top: initial;
-    bottom: -7px;
-    border-bottom: initial;
-    border-top: 7px solid #ccc;
-}
-
-.daterangepicker.dropup:after {
-    top: initial;
-    bottom: -6px;
-    border-bottom: initial;
-    border-top: 6px solid #fff;
-}
-
-.daterangepicker table {
-    width: 100%;
-    margin: 0;
-}
-
-.daterangepicker td, .daterangepicker th {
-    text-align: center;
-    width: 20px;
-    height: 20px;
-    padding: 5px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.daterangepicker td.off {
-    color: #999;
-}
-
-.daterangepicker td.disabled, .daterangepicker option.disabled {
-    color: #999;
-}
-
-.daterangepicker td.available:hover, .daterangepicker th.available:hover {
-    background: #eee;
-}
-
-.daterangepicker td.in-range {
-    background: #ebf4f8;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-}
-
-.daterangepicker td.start-date {
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
-}
-
-.daterangepicker td.end-date {
-    -webkit-border-radius: 0 4px 4px 0;
-    -moz-border-radius: 0 4px 4px 0;
-    border-radius: 0 4px 4px 0;
-}
-
-.daterangepicker td.start-date.end-date {
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
-
-.daterangepicker td.active, .daterangepicker td.active:hover {
-    background-color: #357ebd;
-    border-color: #3071a9;
-    color: #fff;
-}
-
-.daterangepicker td.week, .daterangepicker th.week {
-    font-size: 80%;
-    color: #ccc;
-}
-
-.daterangepicker .ui.dropdown.monthselect,
-.daterangepicker .ui.dropdown.yearselect {
-    font-size: 12px;
-    padding: 5px;
-    margin: 0 5px 0 0;
-    height: auto;
-    cursor: default;
-}
-
-.daterangepicker select.monthselect {
-    margin-right: 2%;
-    width: auto;
-}
-
-.daterangepicker select.yearselect {
-    width: auto;
-}
-
-.daterangepicker select.ui.dropdown.hourselect,
-.daterangepicker select.ui.dropdown.minuteselect,
-.daterangepicker select.ui.dropdown.secondselect,
-.daterangepicker select.ui.dropdown.ampmselect {
-    padding: 3px;
-    height: 2em;
-}
-
-
-.daterangepicker .ui.dropdown.hourselect,
-.daterangepicker .ui.dropdown.minuteselect,
-.daterangepicker .ui.dropdown.secondselect,
-.daterangepicker .ui.dropdown.ampmselect {
-    padding: 5px;
-}
-
-.daterangepicker .ui.dropdown.yearselect > .text,
-.daterangepicker .ui.dropdown.monthselect > .text,
-.daterangepicker .ui.dropdown.hourselect > .text,
-.daterangepicker .ui.dropdown.minuteselect > .text,
-.daterangepicker .ui.dropdown.secondselect > .text,
-.daterangepicker .ui.dropdown.ampmselect > .text {
-    margin-right: 1.25em;
-}
-
-.daterangepicker .ui.dropdown.yearselect > .dropdown.icon,
-.daterangepicker .ui.dropdown.monthselect > .dropdown.icon,
-.daterangepicker .ui.dropdown.hourselect > .dropdown.icon,
-.daterangepicker .ui.dropdown.minuteselect > .dropdown.icon,
-.daterangepicker .ui.dropdown.secondselect > .dropdown.icon,
-.daterangepicker .ui.dropdown.ampmselect > .dropdown.icon {
-    padding: .8em .15em .8em .8em;
-}
-
-.daterangepicker_start_input {
-    float: left;
-}
-
-.daterangepicker_end_input {
-    float: left;
-    padding-left: 11px
-}
-
-.daterangepicker th.month {
-    width: auto;
-    padding: 0;
-}
-
-.daterangepicker .prev .left.arrow.icon,
-.daterangepicker .next .right.arrow.icon { margin: 0; }
 
  /*
  * # Semantic UI - 2.2.10
@@ -38463,514 +38463,6 @@ html.ios {
 /*******************************
          Site Overrides
 *******************************/
-/*! =======================================================
-                      VERSION  6.0.17              
-========================================================= */
-/*! =========================================================
- * bootstrap-slider.js
- *
- * Maintainers:
- *		Kyle Kemp
- *			- Twitter: @seiyria
- *			- Github:  seiyria
- *		Rohit Kalkur
- *			- Twitter: @Rovolutionary
- *			- Github:  rovolution
- *
- * =========================================================
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ========================================================= */
-.slider {
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-}
-.slider.slider-horizontal {
-  width: 210px;
-  height: 20px;
-}
-.slider.slider-horizontal .slider-track {
-  height: 10px;
-  width: 100%;
-  margin-top: -5px;
-  top: 50%;
-  left: 0;
-}
-.slider.slider-horizontal .slider-selection,
-.slider.slider-horizontal .slider-track-low,
-.slider.slider-horizontal .slider-track-high {
-  height: 100%;
-  top: 0;
-  bottom: 0;
-}
-.slider.slider-horizontal .slider-tick,
-.slider.slider-horizontal .slider-handle {
-  margin-left: -10px;
-  margin-top: -5px;
-}
-.slider.slider-horizontal .slider-tick.triangle,
-.slider.slider-horizontal .slider-handle.triangle {
-  border-width: 0 10px 10px 10px;
-  width: 0;
-  height: 0;
-  border-bottom-color: #0480be;
-  margin-top: 0;
-}
-.slider.slider-horizontal .slider-tick-label-container {
-  white-space: nowrap;
-  margin-top: 20px;
-}
-.slider.slider-horizontal .slider-tick-label-container .slider-tick-label {
-  padding-top: 4px;
-  display: inline-block;
-  text-align: center;
-}
-.slider.slider-vertical {
-  height: 210px;
-  width: 20px;
-}
-.slider.slider-vertical .slider-track {
-  width: 10px;
-  height: 100%;
-  margin-left: -5px;
-  left: 50%;
-  top: 0;
-}
-.slider.slider-vertical .slider-selection {
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-}
-.slider.slider-vertical .slider-track-low,
-.slider.slider-vertical .slider-track-high {
-  width: 100%;
-  left: 0;
-  right: 0;
-}
-.slider.slider-vertical .slider-tick,
-.slider.slider-vertical .slider-handle {
-  margin-left: -5px;
-  margin-top: -10px;
-}
-.slider.slider-vertical .slider-tick.triangle,
-.slider.slider-vertical .slider-handle.triangle {
-  border-width: 10px 0 10px 10px;
-  width: 1px;
-  height: 1px;
-  border-left-color: #0480be;
-  margin-left: 0;
-}
-.slider.slider-vertical .slider-tick-label-container {
-  white-space: nowrap;
-}
-.slider.slider-vertical .slider-tick-label-container .slider-tick-label {
-  padding-left: 4px;
-}
-.slider.slider-disabled .slider-handle {
-  background-image: -webkit-linear-gradient(top, #dfdfdf 0%, #bebebe 100%);
-  background-image: -o-linear-gradient(top, #dfdfdf 0%, #bebebe 100%);
-  background-image: linear-gradient(to bottom, #dfdfdf 0%, #bebebe 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdfdfdf', endColorstr='#ffbebebe', GradientType=0);
-}
-.slider.slider-disabled .slider-track {
-  background-image: -webkit-linear-gradient(top, #e5e5e5 0%, #e9e9e9 100%);
-  background-image: -o-linear-gradient(top, #e5e5e5 0%, #e9e9e9 100%);
-  background-image: linear-gradient(to bottom, #e5e5e5 0%, #e9e9e9 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe5e5e5', endColorstr='#ffe9e9e9', GradientType=0);
-  cursor: not-allowed;
-}
-.slider input {
-  display: none;
-}
-.slider .tooltip.top {
-  margin-top: -36px;
-}
-.slider .tooltip-inner {
-  white-space: nowrap;
-}
-.slider .hide {
-  display: none;
-}
-.slider-track {
-  position: absolute;
-  cursor: pointer;
-  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #f9f9f9 100%);
-  background-image: -o-linear-gradient(top, #f5f5f5 0%, #f9f9f9 100%);
-  background-image: linear-gradient(to bottom, #f5f5f5 0%, #f9f9f9 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-}
-.slider-selection {
-  position: absolute;
-  background-image: -webkit-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%);
-  background-image: linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#fff5f5f5', GradientType=0);
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-.slider-selection.tick-slider-selection {
-  background-image: -webkit-linear-gradient(top, #89cdef 0%, #81bfde 100%);
-  background-image: -o-linear-gradient(top, #89cdef 0%, #81bfde 100%);
-  background-image: linear-gradient(to bottom, #89cdef 0%, #81bfde 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);
-}
-.slider-track-low,
-.slider-track-high {
-  position: absolute;
-  background: transparent;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-.slider-handle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #337ab7;
-  background-image: -webkit-linear-gradient(top, #149bdf 0%, #0480be 100%);
-  background-image: -o-linear-gradient(top, #149bdf 0%, #0480be 100%);
-  background-image: linear-gradient(to bottom, #149bdf 0%, #0480be 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
-  filter: none;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-  border: 0px solid transparent;
-}
-.slider-handle.round {
-  border-radius: 50%;
-}
-.slider-handle.triangle {
-  background: transparent none;
-}
-.slider-handle.custom {
-  background: transparent none;
-}
-.slider-handle.custom::before {
-  line-height: 20px;
-  font-size: 20px;
-  content: '\2605';
-  color: #726204;
-}
-.slider-tick {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-image: -webkit-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%);
-  background-image: linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#fff5f5f5', GradientType=0);
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  filter: none;
-  opacity: 0.8;
-  border: 0px solid transparent;
-}
-.slider-tick.round {
-  border-radius: 50%;
-}
-.slider-tick.triangle {
-  background: transparent none;
-}
-.slider-tick.custom {
-  background: transparent none;
-}
-.slider-tick.custom::before {
-  line-height: 20px;
-  font-size: 20px;
-  content: '\2605';
-  color: #726204;
-}
-.slider-tick.in-selection {
-  background-image: -webkit-linear-gradient(top, #89cdef 0%, #81bfde 100%);
-  background-image: -o-linear-gradient(top, #89cdef 0%, #81bfde 100%);
-  background-image: linear-gradient(to bottom, #89cdef 0%, #81bfde 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);
-  opacity: 1;
-}
-
-/* FLEXBOX and Auto-width*/
-.ui-slider {
-  display: flex;
-  /*align-items: stretch;*/
-}
-.ui-slider .slider {
-  display: flex;
-}
-
-.ui-slider.fill .slider.slider-horizontal {
-  flex: 1 0;
-}
-.ui-slider.fit .slider {
-  flex: 0 0;
-}
-
-.ui-slider .slider-tick-label-container {
-  display: flex;
-  flex: 1 0;
-}
-
-.ui-slider .tooltip.in {
-  opacity: 0.9;
-}
-
-.ui-slider .tooltip.bottom {
-  margin-top: 12px;
-}
-
-
-/* MOODS */
-.ui-slider.mood-success .slider-handle {
-  background: hsl(120, 39%, 30%);
-}
-.ui-slider.mood-success .slider-selection {
-  background: hsl(120, 39%, 70%);
-}
-.ui-slider.mood-success.section-1 .slider-selection {
-  background: hsl(120, 39%, 95%);
-}
-.ui-slider.mood-success.section-2 .slider-selection {
-  background: hsl(120, 39%, 90%);
-}
-.ui-slider.mood-success.section-3 .slider-selection {
-  background: hsl(120, 39%, 85%);
-}
-.ui-slider.mood-success.section-4 .slider-selection {
-  background: hsl(120, 39%, 80%);
-}
-.ui-slider.mood-success.section-5 .slider-selection {
-  background: hsl(120, 39%, 75%);
-}
-.ui-slider.mood-success.section-6 .slider-selection {
-  background: hsl(120, 39%, 70%);
-}
-.ui-slider.mood-success.section-7 .slider-selection {
-  background: hsl(120, 39%, 65%);
-}
-.ui-slider.mood-success.section-8 .slider-selection {
-  background: hsl(120, 39%, 60%);
-}
-.ui-slider.mood-success.section-9 .slider-selection {
-  background: hsl(120, 39%, 55%);
-}
-.ui-slider.mood-success.section-10 .slider-selection {
-  background: hsl(120, 39%, 50%);
-}
-/* info */
-.ui-slider.mood-info .slider-handle {
-  background: hsl(194, 66%, 30%);
-}
-.ui-slider.mood-info .slider-selection {
-  background: hsl(194, 66%, 70%);
-}
-.ui-slider.mood-info.section-1 .slider-selection {
-  background: hsl(194, 66%, 95%);
-}
-.ui-slider.mood-info.section-2 .slider-selection {
-  background: hsl(194, 66%, 90%);
-}
-.ui-slider.mood-info.section-3 .slider-selection {
-  background: hsl(194, 66%, 85%);
-}
-.ui-slider.mood-info.section-4 .slider-selection {
-  background: hsl(194, 66%, 80%);
-}
-.ui-slider.mood-info.section-5 .slider-selection {
-  background: hsl(194, 66%, 75%);
-}
-.ui-slider.mood-info.section-6 .slider-selection {
-  background: hsl(194, 66%, 70%);
-}
-.ui-slider.mood-info.section-7 .slider-selection {
-  background: hsl(194, 66%, 65%);
-}
-.ui-slider.mood-info.section-8 .slider-selection {
-  background: hsl(194, 66%, 60%);
-}
-.ui-slider.mood-info.section-9 .slider-selection {
-  background: hsl(194, 66%, 55%);
-}
-.ui-slider.mood-info.section-10 .slider-selection {
-  background: hsl(194, 66%, 50%);
-}
-/* warning */
-.ui-slider.mood-warning .slider-handle {
-  background: hsl(35, 84%, 30%);
-}
-.ui-slider.mood-warning .slider-selection {
-  background: hsl(35, 84%, 70%);
-}
-.ui-slider.mood-warning.section-1 .slider-selection {
-  background: hsl(35, 84%, 95%);
-}
-.ui-slider.mood-warning.section-2 .slider-selection {
-  background: hsl(35, 84%, 90%);
-}
-.ui-slider.mood-warning.section-3 .slider-selection {
-  background: hsl(35, 84%, 85%);
-}
-.ui-slider.mood-warning.section-4 .slider-selection {
-  background: hsl(35, 84%, 80%);
-}
-.ui-slider.mood-warning.section-5 .slider-selection {
-  background: hsl(35, 84%, 75%);
-}
-.ui-slider.mood-warning.section-6 .slider-selection {
-  background: hsl(35, 84%, 70%);
-}
-.ui-slider.mood-warning.section-7 .slider-selection {
-  background: hsl(35, 84%, 65%);
-}
-.ui-slider.mood-warning.section-8 .slider-selection {
-  background: hsl(35, 84%, 60%);
-}
-.ui-slider.mood-warning.section-9 .slider-selection {
-  background: hsl(35, 84%, 55%);
-}
-.ui-slider.mood-warning.section-10 .slider-selection {
-  background: hsl(35, 84%, 50%);
-}
-/* error */
-.ui-slider.mood-error .slider-handle {
-  background: hsl(2, 64%, 30%);
-}
-.ui-slider.mood-error .slider-selection {
-  background: hsl(2, 64%, 70%);
-}
-.ui-slider.mood-error.section-1 .slider-selection {
-  background: hsl(2, 64%, 95%);
-}
-.ui-slider.mood-error.section-2 .slider-selection {
-  background: hsl(2, 64%, 90%);
-}
-.ui-slider.mood-error.section-3 .slider-selection {
-  background: hsl(2, 64%, 85%);
-}
-.ui-slider.mood-error.section-4 .slider-selection {
-  background: hsl(2, 64%, 80%);
-}
-.ui-slider.mood-error.section-5 .slider-selection {
-  background: hsl(2, 64%, 75%);
-}
-.ui-slider.mood-error.section-6 .slider-selection {
-  background: hsl(2, 64%, 70%);
-}
-.ui-slider.mood-error.section-7 .slider-selection {
-  background: hsl(2, 64%, 65%);
-}
-.ui-slider.mood-error.section-8 .slider-selection {
-  background: hsl(2, 64%, 60%);
-}
-.ui-slider.mood-error.section-9 .slider-selection {
-  background: hsl(2, 64%, 55%);
-}
-.ui-slider.mood-error.section-10 .slider-selection {
-  background: hsl(2, 64%, 50%);
-}
-/* RAG, RAGAR */
-.ui-slider.mood-rag.section-1 .slider-handle,
-.ui-slider.mood-ragar.section-1 .slider-handle,
-.ui-slider.mood-ragar.section-5 .slider-handle {
-  background: hsl(2, 64%, 35%);
-}
-.ui-slider.mood-rag.section-1 .slider-tick.in-selection,
-.ui-slider.mood-ragar.section-1 .slider-tick.in-selection,
-.ui-slider.mood-ragar.section-5 .slider-tick.in-selection {
-  background: hsl(2, 64%, 85%);
-}
-.ui-slider.mood-rag.section-1 .slider-selection,
-.ui-slider.mood-ragar.section-1 .slider-selection,
-.ui-slider.mood-ragar.section-5 .slider-selection {
-  background: hsl(2, 64%, 75%);
-}
-.ui-slider.mood-rag.section-2 .slider-handle,
-.ui-slider.mood-ragar.section-2 .slider-handle,
-.ui-slider.mood-ragar.section-4 .slider-handle
- {
-  background: hsl(44, 64%, 35%);
-}
-.ui-slider.mood-rag.section-2 .slider-tick.in-selection,
-.ui-slider.mood-ragar.section-2 .slider-tick.in-selection,
-.ui-slider.mood-ragar.section-4 .slider-tick.in-selection
- {
-  background: hsl(44, 64%, 85%);
-}
-.ui-slider.mood-rag.section-2 .slider-selection,
-.ui-slider.mood-ragar.section-2 .slider-selection,
-.ui-slider.mood-ragar.section-4 .slider-selection {
-  background: hsl(44, 64%, 75%);
-}
-.ui-slider.mood-rag.section-3 .slider-handle,
-.ui-slider.mood-ragar.section-3 .slider-handle {
-  background: hsl(120, 39%, 35%);
-}
-.ui-slider.mood-rag.section-3 .slider-tick.in-selection,
-.ui-slider.mood-ragar.section-3 .slider-tick.in-selection {
-  background: hsl(120, 39%, 85%);
-}
-.ui-slider.mood-rag.section-3 .slider-selection,
-.ui-slider.mood-ragar.section-3 .slider-selection  {
-  background: hsl(120, 39%, 75%);
-}
-/* GAR */
-.ui-slider.mood-gar.section-3 .slider-handle {
-  background: hsl(2, 64%, 35%);
-}
-.ui-slider.mood-gar.section-3 .slider-selection {
-  background: hsl(2, 64%, 75%);
-}
-.ui-slider.mood-gar.section-2 .slider-handle {
-  background: hsl(44, 64%, 35%);
-}
-.ui-slider.mood-gar.section-2 .slider-selection {
-  background: hsl(44, 64%, 75%);
-}
-.ui-slider.mood-gar.section-1 .slider-handle {
-  background: hsl(120, 39%, 35%);
-}
-.ui-slider.mood-gar.section-1 .slider-selection {
-  background: hsl(120, 39%, 75%);
-}
-
-/*  HANDLE SHAPES  */
-.ui-slider .slider-handle.rect {
-  width: 5px;
-  border-radius: 2px;
-}
-.ui-slider.slider-horizontal .rect {
-  margin-left: -5px;
-}
-
 @charset "UTF-8";
 .flexberry-button.top.attached {
   margin-bottom: 0 !important; }
@@ -39122,8 +38614,27 @@ html.ios {
 .ui.right.sidebar.tabbar {
   background: #fff; }
 
-.flexberry-colorpicker .minicolors-sprite {
-  background-image: url("/assets/images/jquery.minicolors.png"); }
+/**
+  Styles for flexberry-colorpicker component (see templates/components/flexberry-colorpicker.hbs).
+*/
+.flexberry-colorpicker .minicolors {
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.28571429rem;
+  box-shadow: 0em 0em 0em 0em transparent inset;
+  -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+  transition: color 0.1s ease, border-color 0.1s ease; }
+  .flexberry-colorpicker .minicolors:hover {
+    border-color: rgba(34, 36, 38, 0.35);
+    box-shadow: none; }
+  .flexberry-colorpicker .minicolors.minicolors-focus {
+    border-color: #85B7D9;
+    box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset; }
+  .flexberry-colorpicker .minicolors .minicolors-swatch {
+    border: none; }
+    .flexberry-colorpicker .minicolors .minicolors-swatch .minicolors-swatch-color {
+      border-radius: 0.28571429rem; }
+  .flexberry-colorpicker .minicolors .minicolors-panel .minicolors-sprite {
+    background-image: url("/assets/images/jquery.minicolors.png"); }
 
 .layer-result-list .item {
   cursor: pointer; }
@@ -39152,41 +38663,105 @@ html.ios {
   Styles for print/export tool's dialog (see templates/components/map-commands-dialogs/export.hbs).
 */
 .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content {
-  padding: 0; }
+  padding: 0;
+  overflow: visible; }
   .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid {
     margin-top: 0;
     margin-bottom: 0;
+    box-shadow: none;
     height: 400px; }
     .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column {
-      max-height: 400px; }
-      .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .flexberry-dropdown.ui.selection.dropdown .menu {
-        max-height: 150px; }
+      max-height: 400px;
+      padding-right: 0; }
+      .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tabular.menu.fluid {
+        width: 100% !important; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tabular.menu.fluid .item {
+          width: 20%; }
+          .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tabular.menu.fluid .item:last-child {
+            width: calc( 20% + 1px); }
+      .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tabular.menu .item {
+        padding-top: 10px;
+        padding-bottom: 10px; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tabular.menu .item i.icon {
+          margin: 0em;
+          font-size: 1.2em; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tabular.menu .item.disabled i.icon.download:before {
+          color: #999; }
+      .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tab.segment {
+        height: calc( 100% - 24px - 1.2em);
+        border-radius: 0; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tab.segment .flexberry-dropdown.ui.selection.dropdown .menu {
+          max-height: 150px; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tab.segment .ui.grid .row:not(:last-child) {
+          padding-bottom: 0; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-settings-column .ui.tab.segment .ui.grid .row .column:not(:last-child) {
+          padding-right: 0; }
     .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column {
       max-height: 400px;
-      overflow: hidden; }
-    .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-sheet-of-paper {
-      background: white;
-      border: 1px solid black;
-      width: 100%;
-      height: 100%;
-      padding: 14px;
-      display: block; }
-      .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-sheet-of-paper .flexberry-export-map-command-dialog-sheet-of-paper-map-caption {
-        margin-bottom: 14px;
-        text-align: center; }
-      .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-sheet-of-paper .flexberry-export-map-command-dialog-sheet-of-paper-map {
-        background: #f4f4f4;
-        border: 1px solid black;
+      overflow: hidden;
+      box-shadow: none; }
+      .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column .flexberry-export-map-command-dialog-sheet-of-paper {
+        background: white;
+        border: 1px solid #d4d4d5;
         width: 100%;
+        height: 100%;
+        padding: 14px;
         margin: 0 auto;
-        display: block;
-        box-sizing: border-box; }
-        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-sheet-of-paper .flexberry-export-map-command-dialog-sheet-of-paper-map .flexberry-map {
+        display: block; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column .flexberry-export-map-command-dialog-sheet-of-paper .flexberry-export-map-command-dialog-sheet-of-paper-map-caption {
+          margin-bottom: 14px;
+          text-align: center; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column .flexberry-export-map-command-dialog-sheet-of-paper .flexberry-export-map-command-dialog-sheet-of-paper-map {
+          background: #f4f4f4;
+          border: 1px solid #d4d4d5;
           width: 100%;
-          height: 100%; }
+          margin: 0 auto;
+          display: block;
+          box-sizing: border-box; }
+          .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column .flexberry-export-map-command-dialog-sheet-of-paper .flexberry-export-map-command-dialog-sheet-of-paper-map .flexberry-map {
+            width: 100%;
+            height: 100%; }
+        .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column .flexberry-export-map-command-dialog-sheet-of-paper.map-only-mode {
+          padding: 0; }
+          .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column .flexberry-export-map-command-dialog-sheet-of-paper.map-only-mode .flexberry-export-map-command-dialog-sheet-of-paper-map-caption {
+            display: none;
+            margin-bottom: 0; }
+          .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column .flexberry-export-map-command-dialog-sheet-of-paper.map-only-mode .flexberry-export-map-command-dialog-sheet-of-paper-map {
+            border: none;
+            width: 100%;
+            height: 100%; }
+            .ui.modal.flexberry-export-map-command-dialog > .content.flexberry-dialog-content > .ui.form > .ui.grid .flexberry-export-map-command-dialog-preview-column .flexberry-export-map-command-dialog-sheet-of-paper.map-only-mode .flexberry-export-map-command-dialog-sheet-of-paper-map .flexberry-map .leaflet-control-container {
+              display: none; }
 
 .leaflet-control-zoomslider-wrap {
   box-sizing: content-box; }
+
+/**
+  Styles for legend-control component (see templates/components/legend-control.hbs).
+*/
+.leaflet-legend-control {
+  padding: 2px;
+  border: white solid;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  border-radius: 3px;
+  background: #f8f8f9;
+  max-width: 50%;
+  max-height: 50%;
+  overflow: auto; }
+  .leaflet-legend-control .layer-legend {
+    display: inline-block; }
+    .leaflet-legend-control .layer-legend:not(:last-child) {
+      margin-bottom: 5px;
+      margin-right: 5px; }
+    .leaflet-legend-control .layer-legend .layer-legend-image-wrapper {
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1); }
+      .leaflet-legend-control .layer-legend .layer-legend-image-wrapper img, .leaflet-legend-control .layer-legend .layer-legend-image-wrapper i {
+        height: 20px;
+        width: 20px;
+        margin: 0; }
 
 i.icon.globe:before  {
   content:   ""; }
