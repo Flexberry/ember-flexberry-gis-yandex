@@ -817,6 +817,14 @@ define('dummy/components/olv-setconfigdialogbutton', ['exports', 'ember-flexberr
 define('dummy/components/olv-toolbar', ['exports', 'ember-flexberry/components/olv-toolbar'], function (exports, _emberFlexberryComponentsOlvToolbar) {
   exports['default'] = _emberFlexberryComponentsOlvToolbar['default'];
 });
+define('dummy/components/range-slider', ['exports', 'ui-slider/components/range-slider'], function (exports, _uiSliderComponentsRangeSlider) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _uiSliderComponentsRangeSlider['default'];
+    }
+  });
+});
 define('dummy/components/scale-control', ['exports', 'ember-flexberry-gis/components/scale-control'], function (exports, _emberFlexberryGisComponentsScaleControl) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
@@ -885,6 +893,14 @@ define('dummy/components/ui-shape', ['exports', 'semantic-ui-ember/components/ui
 });
 define('dummy/components/ui-sidebar', ['exports', 'semantic-ui-ember/components/ui-sidebar'], function (exports, _semanticUiEmberComponentsUiSidebar) {
   exports['default'] = _semanticUiEmberComponentsUiSidebar['default'];
+});
+define('dummy/components/ui-slider', ['exports', 'ui-slider/components/ui-slider'], function (exports, _uiSliderComponentsUiSlider) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _uiSliderComponentsUiSlider['default'];
+    }
+  });
 });
 define('dummy/components/ui-sticky', ['exports', 'semantic-ui-ember/components/ui-sticky'], function (exports, _semanticUiEmberComponentsUiSticky) {
   exports['default'] = _semanticUiEmberComponentsUiSticky['default'];
@@ -3645,6 +3661,19 @@ define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/dr
     assert.ok(true, 'modules/ember-flexberry-gis/map-tools/draw.js should pass jshint.');
   });
 });
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-all-polygon.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry-gis/map-tools');
+  test('modules/ember-flexberry-gis/map-tools/identify-all-polygon.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry-gis/map-tools/identify-all-polygon.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-all-polygon.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry-gis/map-tools/identify-all-polygon.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry-gis/map-tools/identify-all-polygon.js should pass jshint.');
+  });
+});
 define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-all-rectangle.jscs-test', ['exports'], function (exports) {
   module('JSCS - modules/ember-flexberry-gis/map-tools');
   test('modules/ember-flexberry-gis/map-tools/identify-all-rectangle.js should pass jscs', function () {
@@ -3658,6 +3687,45 @@ define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/id
     assert.ok(true, 'modules/ember-flexberry-gis/map-tools/identify-all-rectangle.js should pass jshint.');
   });
 });
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-polygon.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry-gis/map-tools');
+  test('modules/ember-flexberry-gis/map-tools/identify-polygon.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry-gis/map-tools/identify-polygon.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-polygon.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry-gis/map-tools/identify-polygon.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry-gis/map-tools/identify-polygon.js should pass jshint.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-rectangle.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry-gis/map-tools');
+  test('modules/ember-flexberry-gis/map-tools/identify-rectangle.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry-gis/map-tools/identify-rectangle.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-rectangle.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry-gis/map-tools/identify-rectangle.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry-gis/map-tools/identify-rectangle.js should pass jshint.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-top-polygon.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry-gis/map-tools');
+  test('modules/ember-flexberry-gis/map-tools/identify-top-polygon.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry-gis/map-tools/identify-top-polygon.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-top-polygon.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry-gis/map-tools/identify-top-polygon.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry-gis/map-tools/identify-top-polygon.js should pass jshint.');
+  });
+});
 define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-top-rectangle.jscs-test', ['exports'], function (exports) {
   module('JSCS - modules/ember-flexberry-gis/map-tools');
   test('modules/ember-flexberry-gis/map-tools/identify-top-rectangle.js should pass jscs', function () {
@@ -3669,6 +3737,19 @@ define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/id
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'modules/ember-flexberry-gis/map-tools/identify-top-rectangle.js should pass jshint.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-visible-polygon.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry-gis/map-tools');
+  test('modules/ember-flexberry-gis/map-tools/identify-visible-polygon.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry-gis/map-tools/identify-visible-polygon.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-visible-polygon.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry-gis/map-tools/identify-visible-polygon.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry-gis/map-tools/identify-visible-polygon.js should pass jshint.');
   });
 });
 define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/map-tools/identify-visible-rectangle.jscs-test', ['exports'], function (exports) {
@@ -3981,6 +4062,45 @@ define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/mixins/map-r
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'modules/ember-flexberry-gis/mixins/map-route-csw-loader.js should pass jshint.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/mixins/map-tools/identify-all.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry-gis/mixins/map-tools');
+  test('modules/ember-flexberry-gis/mixins/map-tools/identify-all.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry-gis/mixins/map-tools/identify-all.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/mixins/map-tools/identify-all.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry-gis/mixins/map-tools/identify-all.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry-gis/mixins/map-tools/identify-all.js should pass jshint.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/mixins/map-tools/identify-top.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry-gis/mixins/map-tools');
+  test('modules/ember-flexberry-gis/mixins/map-tools/identify-top.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry-gis/mixins/map-tools/identify-top.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/mixins/map-tools/identify-top.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry-gis/mixins/map-tools/identify-top.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry-gis/mixins/map-tools/identify-top.js should pass jshint.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/mixins/map-tools/identify-visible.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry-gis/mixins/map-tools');
+  test('modules/ember-flexberry-gis/mixins/map-tools/identify-visible.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry-gis/mixins/map-tools/identify-visible.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/mixins/map-tools/identify-visible.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry-gis/mixins/map-tools/identify-visible.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry-gis/mixins/map-tools/identify-visible.js should pass jshint.');
   });
 });
 define('dummy/ember-flexberry-gis/tests/modules/ember-flexberry-gis/mixins/regenerated/models/new-platform-flexberry-g-i-s-csw-connection.jscs-test', ['exports'], function (exports) {
@@ -4521,6 +4641,20 @@ define('dummy/helpers/array', ['exports', 'ember-flexberry-gis/helpers/array'], 
     }
   });
 });
+define('dummy/helpers/await', ['exports', 'ember-promise-helpers/helpers/await'], function (exports, _emberPromiseHelpersHelpersAwait) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersAwait['default'];
+    }
+  });
+  Object.defineProperty(exports, 'await', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersAwait.await;
+    }
+  });
+});
 define('dummy/helpers/block-params', ['exports', 'ember-block-slots/helpers/block-params'], function (exports, _emberBlockSlotsHelpersBlockParams) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
@@ -4627,6 +4761,48 @@ define('dummy/helpers/is-array', ['exports', 'ember', 'ember-truth-helpers/helpe
 
   exports['default'] = forExport;
 });
+define('dummy/helpers/is-fulfilled', ['exports', 'ember-promise-helpers/helpers/is-fulfilled'], function (exports, _emberPromiseHelpersHelpersIsFulfilled) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersIsFulfilled['default'];
+    }
+  });
+  Object.defineProperty(exports, 'isFulfilled', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersIsFulfilled.isFulfilled;
+    }
+  });
+});
+define('dummy/helpers/is-pending', ['exports', 'ember-promise-helpers/helpers/is-pending'], function (exports, _emberPromiseHelpersHelpersIsPending) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersIsPending['default'];
+    }
+  });
+  Object.defineProperty(exports, 'isPending', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersIsPending.isPending;
+    }
+  });
+});
+define('dummy/helpers/is-rejected', ['exports', 'ember-promise-helpers/helpers/is-rejected'], function (exports, _emberPromiseHelpersHelpersIsRejected) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersIsRejected['default'];
+    }
+  });
+  Object.defineProperty(exports, 'isRejected', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersIsRejected.isRejected;
+    }
+  });
+});
 define('dummy/helpers/lt', ['exports', 'ember', 'ember-truth-helpers/helpers/lt'], function (exports, _ember, _emberTruthHelpersHelpersLt) {
 
   var forExport = null;
@@ -4726,6 +4902,14 @@ define('dummy/helpers/or', ['exports', 'ember', 'ember-truth-helpers/helpers/or'
 });
 define('dummy/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _emberInflectorLibHelpersPluralize) {
   exports['default'] = _emberInflectorLibHelpersPluralize['default'];
+});
+define('dummy/helpers/promise-rejected-reason', ['exports', 'ember-promise-helpers/helpers/promise-rejected-reason'], function (exports, _emberPromiseHelpersHelpersPromiseRejectedReason) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPromiseHelpersHelpersPromiseRejectedReason['default'];
+    }
+  });
 });
 define('dummy/helpers/regex-test', ['exports', 'ember-flexberry-gis/helpers/regex-test'], function (exports, _emberFlexberryGisHelpersRegexTest) {
   Object.defineProperty(exports, 'default', {
@@ -5728,6 +5912,14 @@ define('dummy/map-tools/draw', ['exports', 'ember-flexberry-gis/map-tools/draw']
     }
   });
 });
+define('dummy/map-tools/identify-all-polygon', ['exports', 'ember-flexberry-gis/map-tools/identify-all-polygon'], function (exports, _emberFlexberryGisMapToolsIdentifyAllPolygon) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberFlexberryGisMapToolsIdentifyAllPolygon['default'];
+    }
+  });
+});
 define('dummy/map-tools/identify-all-rectangle', ['exports', 'ember-flexberry-gis/map-tools/identify-all-rectangle'], function (exports, _emberFlexberryGisMapToolsIdentifyAllRectangle) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
@@ -5736,11 +5928,27 @@ define('dummy/map-tools/identify-all-rectangle', ['exports', 'ember-flexberry-gi
     }
   });
 });
+define('dummy/map-tools/identify-top-polygon', ['exports', 'ember-flexberry-gis/map-tools/identify-top-polygon'], function (exports, _emberFlexberryGisMapToolsIdentifyTopPolygon) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberFlexberryGisMapToolsIdentifyTopPolygon['default'];
+    }
+  });
+});
 define('dummy/map-tools/identify-top-rectangle', ['exports', 'ember-flexberry-gis/map-tools/identify-top-rectangle'], function (exports, _emberFlexberryGisMapToolsIdentifyTopRectangle) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
       return _emberFlexberryGisMapToolsIdentifyTopRectangle['default'];
+    }
+  });
+});
+define('dummy/map-tools/identify-visible-polygon', ['exports', 'ember-flexberry-gis/map-tools/identify-visible-polygon'], function (exports, _emberFlexberryGisMapToolsIdentifyVisiblePolygon) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberFlexberryGisMapToolsIdentifyVisiblePolygon['default'];
     }
   });
 });
@@ -18484,7 +18692,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"backendUrls":{"root":"https://flexberry.github.io/ember-flexberry-gis-yandex","api":"https://flexberry.github.io/ember-flexberry-gis-yandex"},"log":{"enabled":false},"useUserSettingsService":false,"name":"ember-flexberry-gis-yandex","version":"0.1.0+e0cf1b72"});
+  require("dummy/app")["default"].create({"backendUrls":{"root":"https://flexberry.github.io/ember-flexberry-gis-yandex","api":"https://flexberry.github.io/ember-flexberry-gis-yandex"},"log":{"enabled":false},"useUserSettingsService":false,"name":"ember-flexberry-gis-yandex","version":"0.1.0+d3670810"});
 }
 
 /* jshint ignore:end */
