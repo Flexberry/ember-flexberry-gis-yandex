@@ -74,24 +74,6 @@ export default BaseLayer.extend({
     Creates leaflet layer related to layer type.
 
     @method createLayer
-    @private
-  */
-  _createLayer() {
-    let layer = new L.Yandex(this.get('type'));
-
-    layer.once('MapObjectInitialized', ({ mapObject }) => {
-      // Disable some yandex map additional markup elements.
-      mapObject.options.set('suppressMapOpenBlock', true);
-      mapObject.options.set('suppressObsoleteBrowserNotifier', true);
-    });
-
-    return layer;
-  },
-
-  /**
-    Creates leaflet layer related to layer type.
-
-    @method createLayer
   */
   createLayer() {
     let jsApiUrl = this.get('_jsApiUrl');
@@ -110,7 +92,7 @@ export default BaseLayer.extend({
 
     if (requestedJsApi.isAlreadyLoaded) {
       // Yandex Maps JS API is already loaded, so layer can be created synchronously.
-      return this._createLayer();
+      return this._createYandexLayer();
     }
 
     return new Ember.RSVP.Promise((resolve, reject) => {
@@ -125,7 +107,7 @@ export default BaseLayer.extend({
         requestedJsApi.isAlreadyLoaded = true;
 
         // Create layer & resolve promise.
-        resolve(this._createLayer());
+        resolve(this._createYandexLayer());
       }).fail((jqXHR, textStatus, errorThrown) => {
         // Yandex Maps JS API wasn't loaded, layer can't be created.
         reject(jqXHR.responseText);
@@ -165,5 +147,23 @@ export default BaseLayer.extend({
   */
   search(e) {
     // Tile Yandex layer hasn't any search logic.
-  }
+  },
+
+  /**
+    Creates yandex layer.
+
+    @method _createYandexLayer
+    @private
+  */
+  _createYandexLayer() {
+    let layer = new L.Yandex(this.get('type'));
+
+    layer.once('MapObjectInitialized', ({ mapObject }) => {
+      // Disable some yandex map additional markup elements.
+      mapObject.options.set('suppressMapOpenBlock', true);
+      mapObject.options.set('suppressObsoleteBrowserNotifier', true);
+    });
+
+    return layer;
+  },
 });
