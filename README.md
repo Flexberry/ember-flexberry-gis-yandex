@@ -22,10 +22,10 @@ Ember addon containing Yandex tile & geocoding layers for [ember-flexberry-gis](
 
 ## Demo
 
-Ember Flexberry GIS Ysndex comes with a [dummy app](/tests/dummy) that covers functionality of the addon.
+Ember Flexberry GIS Yandex comes with a [dummy app](/tests/dummy) that covers functionality of the addon.
 
-* [Stable version (master branch)](https://flexberry-ember-gis-yandex.firebaseapp.com)
-* [Bleeding edge version (develop branch)](https://flexberry-ember-gis-yandex-dev.firebaseapp.com)
+* [Stable version (master branch)](https://flexberry.github.io/ember-flexberry-gis-yandex/master/index.html)
+* [Bleeding edge version (develop branch)](https://flexberry.github.io/ember-flexberry-gis-yandex/develop/index.html)
 
 ## Collaborating / Development
 
