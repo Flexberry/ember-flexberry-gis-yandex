@@ -26,6 +26,9 @@
           lat=model.lat
           lng=model.lng
           zoom=model.zoom
+          zoomControl=false
+          zoomDelta=1
+          maxZoom=19
           layerLinks=layerLinks
           queryFilter=queryFilter
           leafletInit=(action "onMapLeafletInit" "leafletMap")
@@ -38,9 +41,19 @@
             leafletContainer=leafletMap
             layers=model.rootLayer.layers
           }}
+          {{
+            zoomslider-control
+            map=leafletMap
+            stepHeight=6
+          }}
           {{scale-control
             map=leafletMap
             imperial=false
+          }}
+          {{
+            switch-scale-control
+            map=leafletMap
+            updateWhenIdle=true
           }}
         {{/flexberry-map}}
       </div>
