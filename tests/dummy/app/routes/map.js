@@ -4,14 +4,16 @@
 
 import Ember from 'ember';
 import EditMapRoute from 'ember-flexberry-gis/routes/edit-map';
+import EditFormRouteOperationsIndicationMixin from 'ember-flexberry/mixins/edit-form-route-operations-indication';
 
 /**
   Map edit route.
 
   @class MapRoute
   @extends EditMapRoute
+  @uses EditFormRouteOperationsIndicationMixin
 */
-export default EditMapRoute.extend({
+export default EditMapRoute.extend(EditFormRouteOperationsIndicationMixin, {
   model() {
     let store = this.get('store');
 
