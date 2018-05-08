@@ -31,7 +31,14 @@
     "osmtogeojson": "2.2.12",
     "proj4leaflet": "1.0.2",
     "seiyria-bootstrap-slider": "~6.0.6",
-    "leaflet-plugins": "shramov/leaflet-plugins#master"
+    "leaflet-plugins": "shramov/leaflet-plugins#master",
+
+    "terraformer": "1.0.8",
+    "leaflet-areaselect": "d0910cc4e74b59bbd9eead447d2353c29dfe84b1",
+    "leaflet.markercluster": "1.1.0",
+    "leaflet-omnivore": "0.3.3",
+    "chart.js": "v2.7.1",
+    "javascript-detect-element-resize": "0.5.3"
   },
   "resolutions": {
     "leaflet": "1.3.1",
