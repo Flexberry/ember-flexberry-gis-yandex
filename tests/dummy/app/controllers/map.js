@@ -3,14 +3,16 @@
 */
 
 import EditMapController from 'ember-flexberry-gis/controllers/edit-map';
+import EditFormControllerOperationsIndicationMixin from 'ember-flexberry/mixins/edit-form-controller-operations-indication';
 
 /**
   Map controller.
 
   @class MapController
   @extends EditMapController
+  @uses EditFormControllerOperationsIndicationMixin
 */
-export default EditMapController.extend({
+export default EditMapController.extend(EditFormControllerOperationsIndicationMixin, {
   /**
     Parent route.
 
